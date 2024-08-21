@@ -1,0 +1,21 @@
+function binarySearch(arr,target){
+    var high=arr.length-1;
+    var low=0;
+    var mid=0;
+    
+    while(low<=high){
+        mid=Math.floor((low+high)/2);
+        if(arr[mid]===target){
+            return mid;
+        }
+        else if(arr[mid]<target){
+            low=mid+1;
+        }else{
+            high=mid-1;
+        }
+    }
+     return -1;
+}
+var arr=[2,4,6,8,9];
+var target=9;
+console.log(binarySearch(arr,target));
